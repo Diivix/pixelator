@@ -12,10 +12,8 @@ function GridCell(props: IProps) {
     setActive(!active);
   };
 
-  const color = active ? '#f59236' : '#282c34';
-
   const style: React.CSSProperties = { 
-    backgroundColor: color ,
+    backgroundColor: active ? '#f59236' : '#282c34',
     border: props.showBorder ? "#4e5259 1px solid" : ""
   };
 
