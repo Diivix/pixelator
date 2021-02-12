@@ -1,13 +1,47 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: Metropolis-Regular;
+  src: url("./assets/fonts/metropolis/Metropolis-Regular.woff2") format("woff2"), url("./assets/fonts/metropolis/Metropolis-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: Metropolis-Bold;
+  src: url("./assets/fonts/metropolis/Metropolis-Bold.woff2") format("woff2"), url("./assets/fonts/metropolis/Metropolis-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Inter-Regular;
+  src: url("./assets/fonts/inter/Inter-Regular.woff2") format("woff2"), url("./assets/fonts/inter/Inter-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Inter-Bold;
+  src: url("./assets/fonts/inter/Inter-Bold.woff2") format("woff2"), url("./assets/fonts/inter/Inter-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter-Regular';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #282c34;
+  /* color: #212529; */
+  color: #f7f7f7;
+
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Metropolis-Bold';
+}
+
+h1 {
+  margin: 40px 20px 20px 0;
+  font-size: 6em;
 }
