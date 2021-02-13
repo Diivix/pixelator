@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { DEFAULT_CELL_ACTIVE_COLOR, DEFAULT_CELL_BORDER_COLOR, DEFAULT_CELL_INACTIVE_COLOR } from '../../helpers/defaults';
+import { DEFAULT_CELL_BORDER_COLOR } from '../../helpers/defaults';
 import './GridCell.css';
 
 interface IProps {
   showBorder: boolean;
   size: number;
+  activeColor: string;
+  inactiveColor: string;
 }
 
 function GridCell(props: IProps) {
@@ -16,7 +18,7 @@ function GridCell(props: IProps) {
 
   const style: React.CSSProperties = {
     display: 'inline-block',
-    backgroundColor: active ? DEFAULT_CELL_ACTIVE_COLOR : DEFAULT_CELL_INACTIVE_COLOR,
+    backgroundColor: active ? props.activeColor : props.inactiveColor,
     border: props.showBorder ? DEFAULT_CELL_BORDER_COLOR + ' 0.5px solid' : '',
     width: props.size + 'px',
     height: props.size + 'px',
