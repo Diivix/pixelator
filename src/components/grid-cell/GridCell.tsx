@@ -22,7 +22,7 @@ function GridCell(props: IProps) {
     height: props.size + 'px',
   };
 
-  return <div className="GridCell" style={style} onClick={changeColor}></div>;
+  return <div className="GridCell" data-testid="grid-cell" style={style} onClick={changeColor}></div>;
 }
 
 export default GridCell;
