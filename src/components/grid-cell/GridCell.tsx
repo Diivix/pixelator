@@ -17,7 +17,7 @@ function GridCell(props: IProps) {
   const style: React.CSSProperties = {
     display: 'inline-block',
     backgroundColor: active ? DEFAULT_CELL_ACTIVE_COLOR : DEFAULT_CELL_INACTIVE_COLOR,
-    border: props.showBorder ? DEFAULT_CELL_BORDER_COLOR + ' 1px solid' : '',
+    border: props.showBorder ? DEFAULT_CELL_BORDER_COLOR + ' 0.5px solid' : '',
     width: props.size + 'px',
     height: props.size + 'px',
   };

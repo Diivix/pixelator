@@ -14,7 +14,7 @@ test('Cell renders with style', () => {
   expect(cell).toHaveStyle({
     display: 'inline-block',
     backgroundColor: '#282c34',
-    border: '#4e5259 1px solid',
+    border: '#4e5259 0.5px solid',
     width: '20px',
     height: '20px',
   });
