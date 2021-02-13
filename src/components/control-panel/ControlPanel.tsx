@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { DEFAULT_CELL_SIZE, DEFAULT_COLOR_PICKER_PALLET, DEFAULT_GRID_SIZE } from '../../helpers/defaults';
+import { DEFAULT_CELL_SIZE, DEFAULT_CELL_SIZE_MAX, DEFAULT_COLOR_PICKER_PALLET, DEFAULT_GRID_SIZE, DEFAULT_GRID_SIZE_MAX } from '../../helpers/defaults';
 import { IState } from '../../models/IState';
 import { SET_CELL_ACTIVE_COLOR, SET_CELL_INACTIVE_COLOR, SET_CELL_SIZE, SET_GRID_SIZE, SHOW_GRID_BORDER } from '../../redux/types';
 import { CirclePicker, ColorResult } from 'react-color';
@@ -18,13 +18,13 @@ function ControlPanel() {
 
   const setGridSize = (event: React.ChangeEvent<HTMLSelectElement>) => {
     let size = parseInt(event.currentTarget.value);
-    if (isNaN(size) || size === 0 || size > DEFAULT_GRID_SIZE) size = DEFAULT_GRID_SIZE;
+    if (isNaN(size) || size === 0 || size > DEFAULT_GRID_SIZE_MAX) size = DEFAULT_GRID_SIZE;
     dispatch({ type: SET_GRID_SIZE, payload: size });
   };
 
   const setCellSize = (event: React.ChangeEvent<HTMLSelectElement>) => {
     let size = parseInt(event.currentTarget.value);
-    if (isNaN(size) || size === 0 || size > DEFAULT_CELL_SIZE) size = DEFAULT_CELL_SIZE;
+    if (isNaN(size) || size === 0 || size > DEFAULT_CELL_SIZE_MAX) size = DEFAULT_CELL_SIZE;
     dispatch({ type: SET_CELL_SIZE, payload: size });
   };
 
@@ -70,12 +70,12 @@ function ControlPanel() {
       </div>
 
       <div className="ControlPanel-section">
-        <label>Pixel Active Colour:</label>
+        <label>Pixel Colour:</label>
         <CirclePicker className="ControlPanel-colorpicker" onChangeComplete={setCellActiveColor} colors={DEFAULT_COLOR_PICKER_PALLET} />
       </div>
 
       <div className="ControlPanel-section">
-        <label>Pixel Inactive Colour:</label>
+        <label>Grid Background Colour:</label>
         <CirclePicker className="ControlPanel-colorpicker" onChangeComplete={setCellInActiveColor} colors={DEFAULT_COLOR_PICKER_PALLET} />
       </div>
     </div>

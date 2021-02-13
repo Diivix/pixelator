@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import GridCell from './GridCell';
-import { DEFAULT_CELL_ACTIVE_COLOR, DEFAULT_CELL_INACTIVE_COLOR } from '../../helpers/defaults';
+import { DEFAULT_CELL_ACTIVE_COLOR, DEFAULT_CELL_BORDER_COLOR, DEFAULT_CELL_INACTIVE_COLOR } from '../../helpers/defaults';
 
 test('Cell renders with style', () => {
   render(
@@ -14,8 +14,8 @@ test('Cell renders with style', () => {
 
   expect(cell).toHaveStyle({
     display: 'inline-block',
-    backgroundColor: DEFAULT_CELL_ACTIVE_COLOR,
-    border: '#4e5259 0.5px solid',
+    backgroundColor: DEFAULT_CELL_INACTIVE_COLOR,
+    border: DEFAULT_CELL_BORDER_COLOR + ' 0.5px solid',
     width: '20px',
     height: '20px',
   });

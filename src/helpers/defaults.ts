@@ -1,5 +1,7 @@
-export const DEFAULT_GRID_SIZE: number = 20;
-export const DEFAULT_CELL_SIZE: number = 40;
+export const DEFAULT_GRID_SIZE: number = 15;
+export const DEFAULT_GRID_SIZE_MAX: number = 20;
+export const DEFAULT_CELL_SIZE: number = 30;
+export const DEFAULT_CELL_SIZE_MAX: number = 40;
 export const DEFAULT_TEXT_COLOR: string = '#f7f7f7';
 export const DEFAULT_BACKGROUND_COLOR: string = '#282c34';
 export const DEFAULT_CELL_ACTIVE_COLOR: string = '#f59236';
@@ -25,9 +27,9 @@ export const DEFAULT_COLOR_PICKER_PALLET: string[] = [
   '#ff5722',
   '#795548',
   '#533D35',
+  DEFAULT_CELL_BORDER_COLOR,
   DEFAULT_BACKGROUND_COLOR,
   '#607d8b',
   DEFAULT_TEXT_COLOR,
-  '#fff',
   '#000000'
 ];

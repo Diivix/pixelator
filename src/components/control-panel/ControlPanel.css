@@ -8,6 +8,11 @@
   max-width: 200px;
 }
 
+.ControlPanel-section > label {
+  /* This will not affect the lables in the form element */
+  margin-left: 2px;
+}
+
 .ControlPanel-form fieldset {
 	border: none;
 	margin: 0;
