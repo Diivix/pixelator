@@ -4,12 +4,19 @@
   text-align: left;
 }
 
-.ControlPanel-form {
+.ControlPanel-section {
   max-width: 200px;
 }
 
+.ControlPanel-section > label {
+  /* This will not affect the lables in the form element */
+  margin-left: 2px;
+}
+
 .ControlPanel-form fieldset {
-  border: none;
+	border: none;
+	margin: 0;
+	padding: 0;
 }
 
 .ControlPanel-form fieldset p {
@@ -19,4 +26,8 @@
 
 .ControlPanel-form fieldset p label {
   margin-right: 10px;
+}
+
+.ControlPanel-colorpicker {
+  margin: 10px 0 0 0 !important;
 }
