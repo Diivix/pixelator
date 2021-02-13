@@ -39,7 +39,7 @@ function ControlPanel() {
 
           <p>
             <label htmlFor="grid-size">Gid Size:</label>
-            <select id="grid-size" name="grid-size" value={DEFAULT_GRID_SIZE} onChange={(e) => setGridSize(e)}>
+            <select id="grid-size" name="grid-size" value={state.gridSize} onChange={(e) => setGridSize(e)}>
               <option value={10}>10</option>
               <option value={15}>15</option>
               <option value={20}>20</option>
@@ -48,7 +48,7 @@ function ControlPanel() {
 
           <p>
             <label htmlFor="cell-size">Cell Size:</label>
-            <select id="cell-size" name="cell-size" value={DEFAULT_CELL_SIZE} onChange={(e) => setCellSize(e)}>
+            <select id="cell-size" name="cell-size" value={state.cellSize} onChange={(e) => setCellSize(e)}>
               <option value={10}>10</option>
               <option value={20}>20</option>
               <option value={30}>30</option>

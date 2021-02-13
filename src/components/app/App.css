@@ -6,11 +6,15 @@
   display: flex;
   flex-direction: row;
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   align-items: center;
   justify-content: center;
   color: white;
+}
 
+.App-header {
+	text-align: left;
+	margin: 10px 0 30px 10px;
 }
 
 .App-col {
