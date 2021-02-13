@@ -1,3 +1,22 @@
 .ControlPanel {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.ControlPanel-form {
+  max-width: 200px;
+}
+
+.ControlPanel-form fieldset {
+  border: none;
+}
+
+.ControlPanel-form fieldset p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ControlPanel-form fieldset p label {
+  margin-right: 10px;
 }

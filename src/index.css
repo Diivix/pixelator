@@ -37,11 +37,17 @@ body {
 
 }
 
-h1, h2, h3, h4 {
-  font-family: 'Metropolis-Bold';
-}
-
 h1 {
   margin: 40px 20px 20px 0;
   font-size: 6em;
 }
+
+h1, h2, h3, h4 {
+  font-family: 'Metropolis-Bold';
+  margin: 0 0 10px 0;
+}
+
+p {
+  margin: 5px 2px 5px 2px;
+}
+

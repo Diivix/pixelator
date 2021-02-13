@@ -1,0 +1,7 @@
+
+export const DEFAULT_GRID_SIZE = 20;
+export const DEFAULT_CELL_SIZE = 40;
+export const DEFAULT_BACKGROUND_COLOR = "#282c34";
+export const DEFAULT_CELL_ACTIVE_COLOR = "#f59236";
+export const DEFAULT_CELL_INACTIVE_COLOR = "#282c34";
+export const DEFAULT_CELL_BORDER_COLOR = "#4e5259";

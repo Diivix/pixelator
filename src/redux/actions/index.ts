@@ -1,14 +1,27 @@
 import {
   SHOW_GRID_BORDER,
-  ActionTypes
+  ActionTypes,
+  SET_GRID_SIZE,
+  SET_CELL_SIZE
 } from '../types';
-// import { ITagOption } from '../../models/ITagOptions';
-// import { ICharacter } from '../../models/ICharacter';
-// import { ITokenPair } from '../../models/ITokenPair';
 
 export const showGrid = (show: boolean): ActionTypes => {
   return {
     type: SHOW_GRID_BORDER,
     payload: show,
+  };
+};
+
+export const setGridSize = (size: number): ActionTypes => {
+  return {
+    type: SET_GRID_SIZE,
+    payload: size,
+  };
+};
+
+export const setCellSize = (size: number): ActionTypes => {
+  return {
+    type: SET_CELL_SIZE,
+    payload: size,
   };
 };

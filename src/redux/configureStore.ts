@@ -3,6 +3,7 @@ import { createStore } from 'redux';
 import { reducer } from './reducers';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
+import { devToolsEnhancer } from 'redux-devtools-extension';
 
 const persistConfig = {
   key: 'pixelator',
@@ -12,7 +13,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, reducer);
 
 const consifureStore = () => {
-  let store: any = createStore(persistedReducer);
+  let store: any = createStore(persistedReducer, devToolsEnhancer({}));
   let persistor = persistStore(store);
   return { store, persistor };
 };

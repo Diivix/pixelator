@@ -3,12 +3,26 @@
 }
 
 .App-container {
+  display: flex;
+  flex-direction: row;
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+
+}
+
+.App-col {
+  height: 100%;
+}
+
+.App-col-side {
+  width: 25%;
+  max-width: 25%;
+}
+
+.App-col-middle {
+  width: 50%;
+  max-width: 50%;
 }

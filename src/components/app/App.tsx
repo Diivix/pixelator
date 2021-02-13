@@ -6,11 +6,15 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <header className="App-header"></header>
       <div className="App-container">
-        <ControlPanel/>
-        <Grid sizeX={10} sizeY={10} />
+        <div className="App-col App-col-side"></div>
+        <div className="App-col App-col-middle">
+          <Grid/>
+        </div>
+        <div className="App-col App-col-side">
+          <ControlPanel />
+        </div>
       </div>
     </div>
   );
