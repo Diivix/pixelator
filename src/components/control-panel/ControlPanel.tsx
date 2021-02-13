@@ -39,20 +39,20 @@ function ControlPanel() {
 
           <p>
             <label htmlFor="grid-size">Gid Size:</label>
-            <select id="grid-size" name="grid-size" onChange={(e) => setGridSize(e)}>
-              <option value={10} selected={state.gridSize === 10}>10</option>
-              <option value={15} selected={state.gridSize === 15}>15</option>
-              <option value={20} selected={state.gridSize === 20}>20</option>
+            <select id="grid-size" name="grid-size" value={DEFAULT_GRID_SIZE} onChange={(e) => setGridSize(e)}>
+              <option value={10}>10</option>
+              <option value={15}>15</option>
+              <option value={20}>20</option>
             </select>
           </p>
 
           <p>
             <label htmlFor="cell-size">Cell Size:</label>
-            <select id="cell-size" name="cell-size" onChange={(e) => setCellSize(e)}>
-              <option value={10} selected={state.cellSize === 10}>10</option>
-              <option value={20} selected={state.cellSize === 20}>20</option>
-              <option value={30} selected={state.cellSize === 30}>30</option>
-              <option value={40} selected={state.cellSize === 40}>40</option>
+            <select id="cell-size" name="cell-size" value={DEFAULT_CELL_SIZE} onChange={(e) => setCellSize(e)}>
+              <option value={10}>10</option>
+              <option value={20}>20</option>
+              <option value={30}>30</option>
+              <option value={40}>40</option>
             </select>
           </p>
         </fieldset>
