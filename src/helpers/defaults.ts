@@ -1,7 +1,9 @@
+// Grid sizes are the number of cells across the x and y axis.
 export const DEFAULT_GRID_SIZE: number = 15;
-export const DEFAULT_GRID_SIZE_MAX: number = 20;
+export const DEFAULT_GRID_SIZES: number[] = [10, 15, 20, 25, 30, 35, 40];
+// Cell sizes are in pixels.
 export const DEFAULT_CELL_SIZE: number = 30;
-export const DEFAULT_CELL_SIZE_MAX: number = 40;
+export const DEFAULT_CELL_SIZES: number[] = [10, 15, 20, 25, 30, 35, 40]; 
 export const DEFAULT_TEXT_COLOR: string = '#f7f7f7';
 export const DEFAULT_BACKGROUND_COLOR: string = '#282c34';
 export const DEFAULT_CELL_ACTIVE_COLOR: string = '#f59236';

@@ -1,6 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { DEFAULT_CELL_SIZE, DEFAULT_CELL_SIZE_MAX, DEFAULT_COLOR_PICKER_PALLET, DEFAULT_GRID_SIZE, DEFAULT_GRID_SIZE_MAX } from '../../helpers/defaults';
+import {
+  DEFAULT_CELL_SIZE,
+  DEFAULT_CELL_SIZES,
+  DEFAULT_COLOR_PICKER_PALLET,
+  DEFAULT_GRID_SIZE,
+  DEFAULT_GRID_SIZES,
+} from '../../helpers/defaults';
 import { IState } from '../../models/IState';
 import { SET_CELL_ACTIVE_COLOR, SET_CELL_INACTIVE_COLOR, SET_CELL_SIZE, SET_GRID_SIZE, SHOW_GRID_BORDER } from '../../redux/types';
 import { CirclePicker, ColorResult } from 'react-color';
@@ -18,13 +24,13 @@ function ControlPanel() {
 
   const setGridSize = (event: React.ChangeEvent<HTMLSelectElement>) => {
     let size = parseInt(event.currentTarget.value);
-    if (isNaN(size) || size === 0 || size > DEFAULT_GRID_SIZE_MAX) size = DEFAULT_GRID_SIZE;
+    if (isNaN(size) || !DEFAULT_GRID_SIZES.includes(state.gridSize)) size = DEFAULT_GRID_SIZE;
     dispatch({ type: SET_GRID_SIZE, payload: size });
   };
 
   const setCellSize = (event: React.ChangeEvent<HTMLSelectElement>) => {
     let size = parseInt(event.currentTarget.value);
-    if (isNaN(size) || size === 0 || size > DEFAULT_CELL_SIZE_MAX) size = DEFAULT_CELL_SIZE;
+    if (isNaN(size) || !DEFAULT_CELL_SIZES.includes(size)) size = DEFAULT_CELL_SIZE;
     dispatch({ type: SET_CELL_SIZE, payload: size });
   };
 
@@ -50,19 +56,22 @@ function ControlPanel() {
             <p>
               <label htmlFor="grid-size">Gid Size:</label>
               <select id="grid-size" name="grid-size" value={state.gridSize} onChange={(e) => setGridSize(e)}>
-                <option value={10}>10</option>
-                <option value={15}>15</option>
-                <option value={20}>20</option>
+                {DEFAULT_GRID_SIZES.map((x) => (
+                  <option key={x} value={x}>
+                    {x}
+                  </option>
+                ))}
               </select>
             </p>
 
             <p>
               <label htmlFor="cell-size">Cell Size:</label>
               <select id="cell-size" name="cell-size" value={state.cellSize} onChange={(e) => setCellSize(e)}>
-                <option value={10}>10</option>
-                <option value={20}>20</option>
-                <option value={30}>30</option>
-                <option value={40}>40</option>
+                {DEFAULT_CELL_SIZES.map((x) => (
+                  <option key={x} value={x}>
+                    {x}
+                  </option>
+                ))}
               </select>
             </p>
           </fieldset>
