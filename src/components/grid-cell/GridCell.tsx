@@ -9,8 +9,9 @@ interface IProps {
   x: number;
   y: number;
   cell: ICell;
-  size: number
+  size: number;
   showBorder: boolean;
+  activeColor: string;
 }
 
 function GridCell(props: IProps) {
@@ -20,6 +21,7 @@ function GridCell(props: IProps) {
   const changeColor = (event: React.MouseEvent) => {
     const cell = Object.assign({}, props.cell);
     cell.isActive = !active;
+    cell.activeColor = props.activeColor;
     dispatch({ type: SET_CELL, payload: { x: props.x, y: props.y, cell: cell } });
     setActive(!active);
   };

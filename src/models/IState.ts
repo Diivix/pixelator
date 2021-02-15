@@ -1,10 +1,10 @@
-import { IGrid } from "./IGrid";
+import { ICell } from "./ICell";
 
 export interface IState {
   showGridBorder: boolean;
   gridSize: number;
   cellSize: number;
   cellActiveColor: string;
-  cellInactiveColor: string;
-  grid: IGrid;
+  gridBackgroundColor: string;
+  grid: ICell[][];
 }

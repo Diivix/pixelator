@@ -1,12 +1,11 @@
 import { ICell } from '../../models/ICell';
-import { IGrid } from '../../models/IGrid';
 import {
   SHOW_GRID_BORDER,
   ActionTypes,
   SET_GRID_SIZE,
   SET_CELL_SIZE,
   SET_CELL_ACTIVE_COLOR,
-  SET_CELL_INACTIVE_COLOR,
+  SET_GRID_BACKGROUND_COLOR,
   SET_GRID,
   SET_CELL,
 } from '../types';
@@ -39,14 +38,14 @@ export const setCellActiveColor = (color: string): ActionTypes => {
   };
 };
 
-export const setCellINactiveColor = (color: string): ActionTypes => {
+export const setGridBackgroundColor = (color: string): ActionTypes => {
   return {
-    type: SET_CELL_INACTIVE_COLOR,
+    type: SET_GRID_BACKGROUND_COLOR,
     payload: color,
   };
 };
 
-export const setGrid = (grid: IGrid): ActionTypes => {
+export const setGrid = (grid: ICell[][]): ActionTypes => {
   return {
     type: SET_GRID,
     payload: grid,
