@@ -31,3 +31,8 @@
 .ControlPanel-colorpicker {
   margin: 10px 0 0 0 !important;
 }
+
+/* Override the border styles for the Circle Color Picker items */
+.ControlPanel-colorpicker > span > div > span > div {
+	border: #b3b3b3 1px solid;
+}
