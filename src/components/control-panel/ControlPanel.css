@@ -19,13 +19,17 @@
 	padding: 0;
 }
 
-.ControlPanel-form fieldset p {
+.ControlPanel-form fieldset > p {
   display: flex;
   justify-content: space-between;
 }
 
-.ControlPanel-form fieldset p label {
+.ControlPanel-form fieldset > p > label {
   margin-right: 10px;
+}
+
+.ControlPanel-form fieldset > p > button {
+  width: 100%;
 }
 
 .ControlPanel-colorpicker {

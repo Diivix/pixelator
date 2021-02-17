@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
+  DEFAULT_CELL,
   DEFAULT_CELL_SIZE,
   DEFAULT_CELL_SIZES,
   DEFAULT_COLOR_PICKER_PALLET,
@@ -8,9 +9,17 @@ import {
   DEFAULT_GRID_SIZES,
 } from '../../helpers/defaults';
 import { IState } from '../../models/IState';
-import { SET_CELL_ACTIVE_COLOR, SET_GRID_BACKGROUND_COLOR, SET_CELL_SIZE, SET_GRID_SIZE, SHOW_GRID_BORDER } from '../../redux/types';
+import {
+  SET_CELL_ACTIVE_COLOR,
+  SET_GRID_BACKGROUND_COLOR,
+  SET_CELL_SIZE,
+  SET_GRID_SIZE,
+  SHOW_GRID_BORDER,
+  SET_GRID,
+} from '../../redux/types';
 import { CirclePicker, ColorResult } from 'react-color';
 import './ControlPanel.css';
+import GridBuilder from '../../helpers/gridBuilder';
 
 function ControlPanel() {
   const dispatch = useDispatch();
@@ -39,7 +48,12 @@ function ControlPanel() {
   };
 
   const setCellInActiveColor = (color: ColorResult) => {
-    dispatch({ type: SET_GRID_BACKGROUND_COLOR, payload: color.hex });
+    dispatch({ type: SET_GRID_BACKGROUND_COLOR, payload: { color: color.hex, grid: state.grid } });
+  };
+
+  const resetGrid = () => {
+    var grid = GridBuilder.build(state.gridSize, DEFAULT_CELL);
+    dispatch({ type: SET_GRID, payload: grid });
   };
 
   return (
@@ -73,6 +87,12 @@ function ControlPanel() {
                   </option>
                 ))}
               </select>
+            </p>
+
+            <p>
+              <button id="reset-grid" name="reset-grid" onClick={resetGrid}>
+                Reset Grid
+              </button>
             </p>
           </fieldset>
         </form>
