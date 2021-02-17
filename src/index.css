@@ -26,6 +26,8 @@
   font-weight: 400;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
   margin: 0;
   font-family: 'Inter-Regular';
@@ -38,11 +40,12 @@ body {
 }
 
 h1 {
+  font-family: 'Press Start 2P', cursive;
   margin: 40px 20px 20px 0;
   font-size: 6em;
 }
 
-h1, h2, h3, h4 {
+h2, h3, h4 {
   font-family: 'Metropolis-Bold';
   margin: 0 0 10px 0;
 }
