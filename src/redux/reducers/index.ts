@@ -5,6 +5,7 @@ import {
   DEFAULT_GRID,
   DEFAULT_GRID_SIZE,
 } from '../../helpers/defaults';
+import GridBuilder from '../../helpers/gridBuilder';
 import { IState } from '../../models/IState';
 import {
   ActionTypes,
@@ -31,15 +32,13 @@ export const reducer = (state = initialState, action: ActionTypes): IState => {
     case SHOW_GRID_BORDER:
       return Object.assign({}, state, { showGridBorder: action.payload });
     case SET_GRID_SIZE:
-      return Object.assign({}, state, { gridSize: action.payload });
+      const resizedGrid = GridBuilder.resize(action.payload, state.grid);
+      return Object.assign({}, state, { gridSize: action.payload, grid: [...resizedGrid] });
     case SET_CELL_SIZE:
       return Object.assign({}, state, { cellSize: action.payload });
     case SET_CELL_ACTIVE_COLOR:
       return Object.assign({}, state, { cellActiveColor: action.payload });
     case SET_GRID_BACKGROUND_COLOR:
-      // Shallow copy with behaviour that seems to mutate the cells. Is there a better way?
-      const cellsbc = [...state.grid];
-      cellsbc.forEach((x) => x.forEach((y) => (y.inactiveColor = action.payload)));
       return Object.assign({}, state, { gridBackgroundColor: action.payload, grid: state.grid });
     case SET_GRID:
       return Object.assign({}, state, { grid: action.payload });

@@ -8,7 +8,7 @@ import {
   DEFAULT_GRID_SIZES,
 } from '../../helpers/defaults';
 import { IState } from '../../models/IState';
-import { SET_CELL_ACTIVE_COLOR, SET_GRID_BACKGROUND_COLOR, SET_CELL_SIZE, SET_GRID_SIZE, SHOW_GRID_BORDER } from '../../redux/types';
+import { SET_CELL_ACTIVE_COLOR, SET_GRID_BACKGROUND_COLOR, SET_CELL_SIZE, SET_GRID_SIZE, SHOW_GRID_BORDER, ActionTypes } from '../../redux/types';
 import { CirclePicker, ColorResult } from 'react-color';
 import './ControlPanel.css';
 
@@ -39,7 +39,7 @@ function ControlPanel() {
   };
 
   const setCellInActiveColor = (color: ColorResult) => {
-    dispatch({ type: SET_GRID_BACKGROUND_COLOR, payload: color.hex });
+    dispatch({ type: SET_GRID_BACKGROUND_COLOR, payload: { color: color.hex, grid: state.grid } });
   };
 
   return (
