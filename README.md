@@ -11,6 +11,10 @@ Create some pixel art.
 - Bug when pressing the grid reset button.
     It basically causes a full page refresh when pressing it. Why?
 
+- Make it look better on mobile
+
+- Style the app
+
 ## Ideas
 
 - Color history of brush

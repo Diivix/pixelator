@@ -4,6 +4,7 @@ import { DEFAULT_CELL_BORDER_COLOR } from '../../helpers/defaults';
 import { ICell } from '../../models/ICell';
 import { SET_CELL } from '../../redux/types';
 import './GridCell.css';
+import styled  from 'styled-components';
 
 interface IProps {
   x: number;
@@ -13,6 +14,20 @@ interface IProps {
   showBorder: boolean;
   activeColor: string;
 }
+
+interface IStyledProps {
+  color: string;
+  size: string;
+  border: string;
+}
+
+const Cell = styled.div<IStyledProps>`
+    display: inline-block;
+    background-color: ${props => props.color};
+    border: ${props => props.border};
+    width: ${props => props.size};
+    height: ${props => props.size};
+  `
 
 function GridCell(props: IProps) {
   const dispatch = useDispatch();
@@ -26,15 +41,11 @@ function GridCell(props: IProps) {
     setActive(!active);
   };
 
-  const style: React.CSSProperties = {
-    display: 'inline-block',
-    backgroundColor: active ? props.cell.activeColor : props.cell.inactiveColor,
-    border: props.showBorder ? DEFAULT_CELL_BORDER_COLOR + ' 0.5px solid' : '',
-    width: props.size + 'px',
-    height: props.size + 'px',
-  };
+  const colorStyle = active ? props.cell.activeColor : props.cell.inactiveColor;
+  const sizeStyle = props.size + 'px';
+  const borderStyle = props.showBorder ? DEFAULT_CELL_BORDER_COLOR + ' 0.5px solid' : '';
 
-  return <div className="GridCell" data-testid="grid-cell" style={style} onClick={changeColor}></div>;
+  return <Cell color={colorStyle} size={sizeStyle} border={borderStyle} data-testid="grid-cell" onClick={changeColor}></Cell>;
 }
 
 export default GridCell;

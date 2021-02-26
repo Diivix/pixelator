@@ -48,7 +48,7 @@ function ControlPanel() {
   };
 
   const setCellInActiveColor = (color: ColorResult) => {
-    dispatch({ type: SET_GRID_BACKGROUND_COLOR, payload: { color: color.hex, grid: state.grid } });
+    dispatch({ type: SET_GRID_BACKGROUND_COLOR, payload: { color: color.hex } });
   };
 
   const resetGrid = () => {
