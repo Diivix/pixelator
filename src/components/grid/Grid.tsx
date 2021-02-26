@@ -7,8 +7,17 @@ import styled from 'styled-components';
 
 interface IProps {}
 
+interface IStyledProps{
+  height: string;
+}
+
 const Container = styled.div`
   text-align: center;
+  width: max-content;
+`;
+
+const Row = styled.div<IStyledProps>`
+  height: ${props => props.height};
 `;
 
 function Grid(props: IProps) {
@@ -20,7 +29,7 @@ function Grid(props: IProps) {
   const cells = state.grid; // Array.from(Array(gridSize), () => Array.from(Array(gridSize), () => false));
 
   const grid = cells.map((x, indexX) => (
-    <div key={indexX} style={{ height: cellSize + 'px' }}>
+    <Row key={indexX} height={cellSize + 'px' }>
       {x.map((y, indexY) => (
         <Cell
           key={indexY}
@@ -32,7 +41,7 @@ function Grid(props: IProps) {
           activeColor={state.cellActiveColor}
         />
       ))}
-    </div>
+    </Row>
   ));
 
   return <Container>{grid}</Container>;
