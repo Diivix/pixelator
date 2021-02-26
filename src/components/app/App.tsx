@@ -1,25 +1,66 @@
 import React from 'react';
 import ControlPanel from '../control-panel/ControlPanel';
 import Grid from '../grid/Grid';
-import './App.css';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  text-align: center;
+`;
+
+const Header = styled.header`
+  text-align: left;
+  margin: 10px 0 30px 10px;
+`;
+
+const Title = styled.h1``;
+
+const Text = styled.p``;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: row;
+  background-color: #282c34;
+  /* min-height: 100vh; */
+  align-items: center;
+  justify-content: center;
+  color: white;
+`;
+
+const ColLeft = styled.div`
+  height: 100%;
+  width: 25%;
+  max-width: 25%;
+`;
+const ColCenter = styled.div`
+  height: 100%;
+  width: 50%;
+  max-width: 50%;
+`;
+const ColRight = styled.div`
+  height: 100%;
+  width: 25%;
+  max-width: 25%;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Pixelator</h1>
-        <p>Unleash your pixel creativity. Start by activitating cells on the grid.</p>
-      </header>
-      <div className="App-container">
-        <div className="App-col App-col-side"></div>
-        <div className="App-col App-col-middle">
-          <Grid/>
-        </div>
-        <div className="App-col App-col-side">
+    <Container>
+      <Header>
+        <Title>Pixelator</Title>
+        <Text>Unleash your pixel creativity. Start by activitating cells on the grid.</Text>
+      </Header>
+      <Content>
+        <ColLeft></ColLeft>
+
+        <ColCenter>
+          <Grid />
+        </ColCenter>
+
+        <ColRight>
           <ControlPanel />
-        </div>
-      </div>
-    </div>
+        </ColRight>
+      </Content>
+    </Container>
   );
 }
 

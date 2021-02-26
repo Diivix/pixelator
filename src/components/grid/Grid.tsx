@@ -2,10 +2,14 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { DEFAULT_CELL_SIZE, DEFAULT_CELL_SIZES } from '../../helpers/defaults';
 import { IState } from '../../models/IState';
-import GridCell from '../grid-cell/GridCell';
-import './Grid.css';
+import Cell from '../cell/Cell';
+import styled from 'styled-components';
 
 interface IProps {}
+
+const Container = styled.div`
+  text-align: center;
+`;
 
 function Grid(props: IProps) {
   const state = useSelector((state: IState) => {
@@ -18,7 +22,7 @@ function Grid(props: IProps) {
   const grid = cells.map((x, indexX) => (
     <div key={indexX} style={{ height: cellSize + 'px' }}>
       {x.map((y, indexY) => (
-        <GridCell
+        <Cell
           key={indexY}
           x={indexX}
           y={indexY}
@@ -31,7 +35,7 @@ function Grid(props: IProps) {
     </div>
   ));
 
-  return <div className="Grid">{grid}</div>;
+  return <Container>{grid}</Container>;
 }
 
 export default Grid;

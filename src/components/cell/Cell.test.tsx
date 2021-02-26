@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import GridCell from './GridCell';
+import Cell from './Cell';
 import { DEFAULT_CELL_ACTIVE_COLOR, DEFAULT_CELL_BORDER_COLOR, DEFAULT_GRID, DEFAULT_GRID_BACKGROUND_COLOR,  } from '../../helpers/defaults';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -14,7 +14,7 @@ test('Cell renders with style', () => {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <React.StrictMode>
-          <GridCell key={0} x={0} y={0} cell={grid[0][0]} size={20} showBorder={true} activeColor={DEFAULT_CELL_ACTIVE_COLOR} />
+          <Cell key={0} x={0} y={0} cell={grid[0][0]} size={20} showBorder={true} activeColor={DEFAULT_CELL_ACTIVE_COLOR} />
         </React.StrictMode>
       </PersistGate>
     </Provider>
